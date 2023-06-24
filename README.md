@@ -1,7 +1,7 @@
 # docker-compose-yml
 Let's review each section:
 
-    Services:
+# Services:
 
         todo-db service: This service uses the diamol/postgres:11.5 image, which pulls the PostgreSQL version 11.5. The service maps the host port 5433 to the container port 5432. This allows external applications to connect to the PostgreSQL database running in the container. The service is connected to the app-net network.
 
