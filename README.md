@@ -17,7 +17,10 @@ Let's review each section:
 In summary, this Docker Compose configuration sets up two services: a PostgreSQL database (todo-db) and a web application (todo-web). The services are connected to the app-net network, and the necessary ports are mapped for external access. The todo-web service also uses a secret file (secrets.json) for accessing sensitive information. The dependencies between the services are specified using depends_on, ensuring that the database container is started before the web application container.
 
 If you intend to bind a folder from the host to the container, you would use the volumes section instead, like this:
-'''bash
+
+
+```bash
 volumes:
   - /path/on/host:/path/in/container
-'''
+```
+
