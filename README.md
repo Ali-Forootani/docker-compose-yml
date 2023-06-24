@@ -16,26 +16,3 @@ Let's review each section:
 
 In summary, this Docker Compose configuration sets up two services: a PostgreSQL database (todo-db) and a web application (todo-web). The services are connected to the app-net network, and the necessary ports are mapped for external access. The todo-web service also uses a secret file (secrets.json) for accessing sensitive information. The dependencies between the services are specified using depends_on, ensuring that the database container is started before the web application container.
 
-
-environment:
-      - Database:Provider=Postgres
-
-
-The environment section in the Docker Compose file allows you to set environment variables for a specific service. In the provided example:
-
-yaml
-
-environment:
-  - Database:Provider=Postgres
-
-The Database:Provider=Postgres line sets an environment variable within the todo-web service. Here's what it means:
-
-    Database:Provider is the name of the environment variable.
-    Postgres is the value assigned to the environment variable.
-
-This environment variable can be accessed by the application running in the todo-web container. The purpose of setting this environment variable is to provide configuration or runtime information to the application, indicating that it should use PostgreSQL as the database provider.
-
-In the application code or configuration, the environment variable Database:Provider can be accessed to determine the database provider to use. The specific implementation details of how the application utilizes this environment variable depend on how the application is designed.
-
-Setting environment variables through the Docker Compose file allows you to configure containers in a consistent and portable manner. It enables you to provide dynamic configuration options to your application without modifying its code or configuration files directly.
-
